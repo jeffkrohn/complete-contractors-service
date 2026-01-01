@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/electrical", "destination": "/electrical/index.html" },
+    { "source": "/electrical/", "destination": "/electrical/index.html" },
+
+    { "source": "/plumbing", "destination": "/plumbing/index.html" },
+    { "source": "/plumbing/", "destination": "/plumbing/index.html" },
+
+    { "source": "/hvac", "destination": "/hvac/index.html" },
+    { "source": "/hvac/", "destination": "/hvac/index.html" },
+
+    { "source": "/flooring", "destination": "/flooring/index.html" },
+    { "source": "/flooring/", "destination": "/flooring/index.html" }
+  ]
+}
