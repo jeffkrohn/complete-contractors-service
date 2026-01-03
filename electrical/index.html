@@ -6,31 +6,29 @@
   <title>Emergency Electrical Service | Complete Contractors</title>
   <meta name="description" content="Emergency and everyday electrical service for residential and rental properties. Call now or request service online." />
 
-.logo{
-  max-width: 120px;
-  height: auto;
-  display: block;
-}
-
-</div>
-
   <style>
     :root{
-      --bg:#0b0f14;
-      --card:#0f1720;
-      --text:#0b1220;
-      --muted:#4b5563;
-      --white:#ffffff;
-      --soft:#f8fafc;
+      /* Page */
+      --soft:#f8fafc;          /* lighter background */
       --border:#e5e7eb;
       --radius:14px;
 
-      /* Brand-ish (subtle) */
-      --btn1:#2563eb; /* blue */
-      --btn2:#111827; /* dark */
+      /* Hero */
+      --heroOverlayTop: rgba(3,7,18,0.78);
+      --heroOverlayBottom: rgba(3,7,18,0.62);
+
+      /* Text */
+      --text:#0b1220;
+      --muted:#4b5563;
+      --white:#ffffff;
+
+      /* Buttons */
+      --btnCall:#dc2626;       /* emergency red */
+      --btnDark:#111827;       /* secondary dark */
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
@@ -47,11 +45,12 @@
 
     /* HERO */
     .hero{
-      background: linear-gradient(180deg, rgba(3,7,18,0.85), rgba(3,7,18,0.65));
+      background: linear-gradient(180deg, var(--heroOverlayTop), var(--heroOverlayBottom));
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
+
     .hero-inner{
       padding: 26px;
       display: grid;
@@ -60,26 +59,39 @@
       align-items: center;
     }
 
+    /* LOGO PLATE (visibility fix) */
     .topbar{
       display:flex;
-      justify-content: flex-start;
+      justify-content: flex-start; /* LEFT */
       margin-bottom: 10px;
     }
+
+    .logo-wrap{
+      background: rgba(255,255,255,0.96);
+      padding: 8px 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+      display: inline-flex;
+      align-items: center;
+    }
+
     .logo{
-      max-width: 130px;
+      max-width: 120px;
       height: auto;
+      display: block;
     }
 
     h1{
-      margin: 6px 0 10px;
+      margin: 8px 0 10px;
       font-size: 34px;
       line-height: 1.15;
       color: var(--white);
       letter-spacing: -0.3px;
     }
+
     .lead{
       margin: 0 0 16px;
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.90);
       font-size: 16px;
     }
     .lead strong{ color: #fff; }
@@ -90,27 +102,31 @@
       flex-wrap: wrap;
       margin-top: 12px;
     }
+
     .btn{
       display:inline-block;
       padding: 12px 16px;
       border-radius: 12px;
       text-decoration:none;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 15px;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
       transition: transform .08s ease, opacity .08s ease;
       white-space: nowrap;
     }
     .btn:active{ transform: translateY(1px); }
-    .btn-primary{
-      background: var(--btn1);
-      color: #fff;
-    }
-    .btn-secondary{
-      background: rgba(255,255,255,0.06);
-      color: #fff;
-    }
     .btn:hover{ opacity: 0.95; }
+
+    .btn-call{
+      background: var(--btnCall);
+      color: #fff;
+      border-color: rgba(220,38,38,0.35);
+    }
+
+    .btn-request{
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
 
     .hero-image{
       width: 100%;
@@ -118,10 +134,10 @@
       border-radius: 12px;
       display:block;
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
     }
 
-    /* SECTION CARD */
+    /* CONTENT CARD */
     .card{
       margin-top: 18px;
       background: #fff;
@@ -130,23 +146,25 @@
       padding: 22px;
       box-shadow: 0 8px 18px rgba(0,0,0,0.05);
     }
+
     .card h2{
       margin: 0 0 10px;
       font-size: 20px;
       letter-spacing: -0.2px;
     }
+
     .card p{
       margin: 0 0 14px;
       color: var(--muted);
     }
 
-    /* SERVICE LIST */
     .services{
       margin: 0;
       padding-left: 18px;
       columns: 2;
       column-gap: 34px;
     }
+
     .services li{
       break-inside: avoid;
       margin: 0 0 8px;
@@ -158,16 +176,19 @@
       gap: 12px;
       flex-wrap: wrap;
     }
+
     .card-cta .btn{
       border: 1px solid var(--border);
     }
-    .card-cta .btn-primary{
-      border-color: rgba(37,99,235,0.35);
+
+    .card-cta .btn-call{
+      border-color: rgba(220,38,38,0.30);
     }
-    .card-cta .btn-secondary{
-      background: #111827;
-      border-color: rgba(17,24,39,0.2);
-      color: #fff;
+
+    .card-cta .btn-request{
+      background: var(--btnDark);
+      color:#fff;
+      border-color: rgba(17,24,39,0.18);
     }
 
     /* RESPONSIVE */
@@ -175,24 +196,23 @@
       .hero-inner{
         grid-template-columns: 1fr;
       }
-      .topbar{
-        justify-content: center;
-      }
-      .logo{
-        max-width: 110px;
-      }
+
       h1{
         font-size: 28px;
-        text-align: center;
+        text-align: left;
       }
-      .lead{
-        text-align: center;
-      }
+
       .cta{
-        justify-content: center;
+        justify-content: flex-start;
       }
+
       .services{
         columns: 1;
+      }
+
+      /* make logo slightly smaller on phone */
+      .logo{
+        max-width: 105px;
       }
     }
   </style>
@@ -207,11 +227,13 @@
 
         <div>
           <div class="topbar">
-            <img
-              class="logo"
-              src="https://cdn.prod.website-files.com/69572fe9970dc664ae10b3d7/6959594660e01610f0c0d83c_CCWILOGO262.png"
-              alt="Complete Contractors"
-            />
+            <div class="logo-wrap">
+              <img
+                class="logo"
+                src="https://cdn.prod.website-files.com/69572fe9970dc664ae10b3d7/6959594660e01610f0c0d83c_CCWILOGO262.png"
+                alt="Complete Contractors"
+              />
+            </div>
           </div>
 
           <h1>Emergency Electrical Services</h1>
@@ -222,8 +244,8 @@
           </p>
 
           <div class="cta">
-            <a class="btn btn-primary" href="tel:+12623005339">Call Us Now</a>
-            <a class="btn btn-secondary" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+            <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
+            <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
               Request Service
             </a>
           </div>
@@ -240,7 +262,7 @@
       </div>
     </section>
 
-    <!-- ADDITIONAL SERVICES -->
+    <!-- SERVICES -->
     <section class="card">
       <h2>Additional Electrical Services</h2>
       <p>
@@ -270,8 +292,8 @@
       </ul>
 
       <div class="card-cta">
-        <a class="btn btn-primary" href="tel:+12623005339">Call Us Now</a>
-        <a class="btn btn-secondary" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+        <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
+        <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
           Request Service
         </a>
       </div>
@@ -280,3 +302,4 @@
   </div>
 </body>
 </html>
+
