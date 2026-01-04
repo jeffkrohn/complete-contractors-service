@@ -2,39 +2,359 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Flooring Installation & Replacement | Complete Contractors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-<body style="font-family: Arial, sans-serif; padding:40px; max-width:900px; margin:auto; line-height:1.5;">
-  <h1>Flooring Services</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Electrical Service | Complete Contractors</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flooring Service | Complete Contractors</title>
+  <meta name="description" content="We provide flooring installation and replacement for residential and rental properties.  This is typically a scheduled service (non-emergency)." />
+
+  <style>
+    :root{
+      /* Page */
+      --soft:#f8fafc;          /* lighter background */
+      --border:#e5e7eb;
+      --radius:14px;
+
+      /* Hero */
+      --heroOverlayTop: rgba(3,7,18,0.78);
+      --heroOverlayBottom: rgba(3,7,18,0.62);
+
+      /* Text */
+      --text:#0b1220;
+      --muted:#4b5563;
+      --white:#ffffff;
+.service-title{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.service-icon{
+  font-size: 1.1em;
+}
+       /* Indents the bullet points */
+.services{
+  list-style-position: inside;
+  padding-left: 30px;
+  margin-left: 0;
+}
+
+      /* Buttons */
+      --btnCall:#dc2626;       /* emergency red */
+      --btnDark:#4376e6;       /* secondary dark */
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--soft);
+      line-height: 1.45;
+    }
+
+    .page{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* HERO */
+    .hero{
+      background: linear-gradient(180deg, var(--heroOverlayTop), var(--heroOverlayBottom));
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .hero-inner{
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    /* LOGO PLATE (visibility fix) */
+    .topbar{
+      display:flex;
+      justify-content: flex-start; /* LEFT */
+      margin-bottom: 10px;
+    }
+
+    .logo-wrap{
+      background: rgba(255,255,255,0.96);
+      padding: 8px 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo{
+      max-width: 120px;
+      height: auto;
+      display: block;
+    }
+
+    h1{
+      margin: 8px 0 10px;
+      font-size: 34px;
+      line-height: 1.15;
+      color: var(--white);
+      letter-spacing: -0.3px;
+    }
+
+    .lead{
+      margin: 0 0 16px;
+      color: rgba(255,255,255,0.90);
+      font-size: 16px;
+    }
+    .lead strong{ color: #fff; }
+
+    .cta{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: transform .08s ease, opacity .08s ease;
+      white-space: nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn:hover{ opacity: 0.95; }
+
+    .btn-call{
+      background: var(--btnCall);
+      color: #fff;
+      border-color: rgba(220,38,38,0.35);
+    }
+
+.btn-request{
+  background: #4376e6;  /* your blue */
+  color: #fff;
+  border-color: rgba(67,118,230,0.4);
+}
+
+
+    .hero-image{
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display:block;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    /* CONTENT CARD */
+    .card{
+      margin-top: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .services{
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 34px;
+    }
+
+    .services li{
+      break-inside: avoid;
+      margin: 0 0 8px;
+    }
+
+    .card-cta{
+      margin-top: 18px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card-cta .btn{
+      border: 1px solid var(--border);
+    }
+
+    .card-cta .btn-call{
+      border-color: rgba(220,38,38,0.30);
+    }
+
+    .card-cta .btn-request{
+      background: var(--btnDark);
+      color:#fff;
+      border-color: rgba(17,24,39,0.18);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px){
+      .hero-inner{
+        grid-template-columns: 1fr;
+      }
+
+      h1{
+        font-size: 28px;
+        text-align: left;
+      }
+
+      .cta{
+        justify-content: flex-start;
+      }
+
+      .services{
+        columns: 1;
+      }
+
+      /* make logo slightly smaller on phone */
+      .logo{
+        max-width: 105px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; padding:40px; max-width:900px; margin:auto; line-height:1.5;">
+<body>
+  <div class="page">
 
-  <!-- LOGO GOES HERE -->
-  <div style="margin-bottom:20px;">
-    <img 
-      src="/logo.png" 
-      alt="Complete Contractors"
-      style="max-width:220px; height:auto;"
-    >
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div>
+          <div class="topbar">
+            <div class="logo-wrap">
+              <img
+                class="logo"
+                src="https://cdn.prod.website-files.com/69572fe9970dc664ae10b3d7/6959594660e01610f0c0d83c_CCWILOGO262.png"
+                alt="Complete Contractors"
+              />
+            </div>
+          </div>
+
+          <h1>Emergency Elecrical Services</h1>
+
+          <p class="lead">
+            <strong>Electrical issues can be dangerous.</strong>
+            If you’re experiencing power loss, burning smells, sparking, or repeated breaker trips, call now.
+          </p>
+          
+
+          <div class="cta">
+            <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
+            <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+              Request Service
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="hero-image"
+            src="https://cdn.prod.website-files.com/69572fe9970dc664ae10b3d7/695941e3a011b846bd3fc89d_complete-contractors-steve-1%20(2).png"
+            alt="Complete Contractors technician"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="card">
+      <h2>Flooring Services</h2>
+      <p>
+       
+      </p>
+
+<h2 class="service-title">
+  <span class="service-icon">⚡</span>
+  General Flooring Repairs, Installation and Replacement 
+</h2>
+
+<ul class="services">
+<strong>FLOORING</strong>
+<li>Flooring Installation and Repairs</li>
+<li>Breakers tripping</li>
+<li>Plugging in too many devices causes breakers to trip</li>
+<li>Tripped AFCI breaker</li>
+<li>GFCI outlets requiring frequent resets</li>
+<li>GFCI plugs not working</li>
+<li>Lights dimming</li>
+<li>Flickering lights</li>
+<li>Recessed can lights flicker</li>
+<li>Recessed can lights don’t respond to smart switches</li>
+<li>Smart switches not responding or syncing to mobile devices</li>
+<li>No power to exterior outlets</li>
+<li>Loss of power to outlets</li>
+<li>Outlets not passing enough power to devices</li>
+<li>Switches not working</li>
+<li>3-way switch not working</li>
+<li>Dimmer switches no longer working</li>
+<li>Light fixture won’t respond to the switch</li>
+<li>Smoke detector or CO₂ detector chirping</li>
+<li>Doorbell or doorbell chime not working/responding</li>
+<li>Appliance plugs no longer working</li>
+<li>A/C or spa plug not turning on</li>
+<li>Exhaust fans or bathroom exhaust fans not working</li>
+<li>Attic fan motors not working</li>
+
+<strong>SAFETY HAZARDS, OVERHEATING & FIRE RISKS</strong>
+<li>Burned plugs</li>
+<li>Burned smell from the panel box</li>
+<li>Smoking plugs</li>
+<li>Warm plugs</li>
+<li>Warm breakers</li>
+<li>Arching circuits</li>
+<li>Sizzling sounds from light switches or fixtures</li>
+<li>Open junction boxes/splices in attic or crawlspace</li>
+<li>Wiring exposed</li>
+<li>Failed electrical inspection reports</li>
+
+<strong>REPAIRS AND REPLACEMENTS</strong>
+<li>Damaged electrical wiring</li>
+<li>Torn wiring</li>
+<li>Cracked, loose, or broken outlets</li>
+<li>Defective under-cabinet lighting</li>
+<li>Damaged low-voltage wiring (CAT5, CAT6, wire)</li>
+<li>Damaged plenum casing, T-pole, or meter riser</li>
+<li>Broken ceiling fan bracket/brace</li>
+<li>Ceiling fan not working or wobbly/loud</li>
+<li>Ceiling fan light won’t turn on</li>
+<li>Ballast replacements</li>
+<li>Lighting fixtures not working</li>
+<li>Shower light not working</li>
+<li>Over-cabinet lighting not working</li>
+</ul>
+      <div class="card-cta">
+        <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
+        <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+          Request Service
+        </a>
+      </div>
+    </section>
+
   </div>
-
-  <h1>Electrical Service</h1>
-  ...
-
-  <p>We provide flooring installation and replacement for residential and rental properties.</p>
-  <p>This is typically a scheduled service (non-emergency).</p>
-
-  <h2>Request a Flooring Quote</h2>
-  <p><a href="https://forms.gle/3DgnAATu35Hmt1Kw8">Request Flooring Quote</a></p>
-
-  <p style="margin-top:30px;"><a href="/">← Back to Services</a></p>
 </body>
 </html>
