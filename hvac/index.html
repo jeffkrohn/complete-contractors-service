@@ -2,42 +2,401 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HVAC Service | No Heat / No AC | Complete Contractors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-<body style="font-family: Arial, sans-serif; padding:40px; max-width:900px; margin:auto; line-height:1.5;">
-  <h1>HVAC Service</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Electrical Service | Complete Contractors</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Electrical Service | Complete Contractors</title>
+  <meta name="description" content="Emergency and everyday electrical service for residential and rental properties. Call now or request service online." />
+
+  <style>
+    :root{
+      /* Page */
+      --soft:#f8fafc;          /* lighter background */
+      --border:#e5e7eb;
+      --radius:14px;
+
+      /* Hero */
+      --heroOverlayTop: rgba(3,7,18,0.78);
+      --heroOverlayBottom: rgba(3,7,18,0.62);
+
+      /* Text */
+      --text:#0b1220;
+      --muted:#4b5563;
+      --white:#ffffff;
+.service-title{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.service-icon{
+  font-size: 1.1em;
+}
+       /* Indents the bullet points */
+.services{
+  list-style-position: inside;
+  padding-left: 30px;
+  margin-left: 0;
+}
+
+      /* Buttons */
+      --btnCall:#dc2626;       /* emergency red */
+      --btnDark:#4376e6;       /* secondary dark */
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--soft);
+      line-height: 1.45;
+    }
+
+    .page{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* HERO */
+    .hero{
+      background: linear-gradient(180deg, var(--heroOverlayTop), var(--heroOverlayBottom));
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .hero-inner{
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    /* LOGO PLATE (visibility fix) */
+    .topbar{
+      display:flex;
+      justify-content: flex-start; /* LEFT */
+      margin-bottom: 10px;
+    }
+
+    .logo-wrap{
+      background: rgba(255,255,255,0.96);
+      padding: 8px 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo{
+      max-width: 120px;
+      height: auto;
+      display: block;
+    }
+
+    h1{
+      margin: 8px 0 10px;
+      font-size: 34px;
+      line-height: 1.15;
+      color: var(--white);
+      letter-spacing: -0.3px;
+    }
+
+    .lead{
+      margin: 0 0 16px;
+      color: rgba(255,255,255,0.90);
+      font-size: 16px;
+    }
+    .lead strong{ color: #fff; }
+
+    .cta{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: transform .08s ease, opacity .08s ease;
+      white-space: nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn:hover{ opacity: 0.95; }
+
+    .btn-call{
+      background: var(--btnCall);
+      color: #fff;
+      border-color: rgba(220,38,38,0.35);
+    }
+
+.btn-request{
+  background: #4376e6;  /* your blue */
+  color: #fff;
+  border-color: rgba(67,118,230,0.4);
+}
+
+
+    .hero-image{
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display:block;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    /* CONTENT CARD */
+    .card{
+      margin-top: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .services{
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 34px;
+    }
+
+    .services li{
+      break-inside: avoid;
+      margin: 0 0 8px;
+    }
+
+    .card-cta{
+      margin-top: 18px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card-cta .btn{
+      border: 1px solid var(--border);
+    }
+
+    .card-cta .btn-call{
+      border-color: rgba(220,38,38,0.30);
+    }
+
+    .card-cta .btn-request{
+      background: var(--btnDark);
+      color:#fff;
+      border-color: rgba(17,24,39,0.18);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px){
+      .hero-inner{
+        grid-template-columns: 1fr;
+      }
+
+      h1{
+        font-size: 28px;
+        text-align: left;
+      }
+
+      .cta{
+        justify-content: flex-start;
+      }
+
+      .services{
+        columns: 1;
+      }
+
+      /* make logo slightly smaller on phone */
+      .logo{
+        max-width: 105px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; padding:40px; max-width:900px; margin:auto; line-height:1.5;">
+<body>
+  <div class="page">
 
-  <!-- LOGO GOES HERE -->
-  <div style="margin-bottom:20px;">
-    <img 
-      src="/logo.png" 
-      alt="Complete Contractors"
-      style="max-width:220px; height:auto;"
-    >
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div>
+          <div class="topbar">
+            <div class="logo-wrap">
+              <img
+                class="logo"
+                src="https://cdn.prod.website-files.com/69572fe9970dc664ae10b3d7/6959594660e01610f0c0d83c_CCWILOGO262.png"
+                alt="Complete Contractors"
+              />
+            </div>
+          </div>
+
+          <h1>Emergency Elecrical Services</h1>
+
+          <p class="lead">
+            <strong>Electrical issues can be dangerous.</strong>
+            If you’re experiencing power loss, burning smells, sparking, or repeated breaker trips, call now.
+          </p>
+          
+
+          <div class="cta">
+            <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
+            <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+              Request Service
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="hero-image"
+            src="https://cdn.prod.website-files.com/69572fe9970dc664ae10b3d7/695941e3a011b846bd3fc89d_complete-contractors-steve-1%20(2).png"
+            alt="Complete Contractors technician"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="card">
+      <h2>Additional Electrical Services</h2>
+      <p>
+       
+      </p>
+
+<h2 class="service-title">
+  <span class="service-icon">⚡</span>
+  General Electrical Repairs, Installation and Replacement 
+</h2>
+
+<ul class="services">
+<strong>Furnaces (Gas, Electric, Oil)</strong>
+<li>Furnace installation & replacement</li>
+<li>Furnace tune-up & seasonal maintenance</li>
+<li>Furnace diagnostics & repairs</li>
+<li>Heat exchanger inspection & replacement</li>
+<li>Ignitor, flame sensor, and thermocouple service</li>
+<li>Gas valve & burner cleaning</li>
+<li>Blower motor replacement or balancing</li>
+<li>Filter replacement and air quality upgrades</li>
+ 
+
+<strong>Boilers & Hydronic Systems</li>
+<li>Boiler installation & replacement</li>
+<li>Radiator and baseboard heating repairs</li>
+<li>Air bleed and system balancing</strong>
+<li>Zone valve & circulator pump replacement</li>
+<li>Expansion tank service</strong>
+<li>Condensate neutralizer installation</li>
+ 
+<strong>Heat Pumps</strong>
+<li>Air-source & dual-fuel heat pump installation</li>
+<li>Heat pump defrost or reversing valve repairs</li>
+<li>Thermostat calibration for heat pump systems</li>
+<li>Cold-climate high-efficiency upgrades</li>
+ 
+❄️ <strong>Air Conditioning Services</strong>
+Central Air Conditioning</li>
+<li>New A/C system installation</li>
+<li>Seasonal A/C tune-up & inspection</li>
+<li>Compressor, capacitor, or contactor replacement</li>
+<li>Condenser coil cleaning</li>
+<li>Refrigerant leak detection & recharge</li>
+<li>Drain pan and condensate line cleaning</li>
+<li>Fan motor or blower repair/replacement</li>
+<li>Electrical diagnostics and repairs</li>
+ 
+<strong>Mini-Split / Ductless Systems</strong>
+<li>Ductless system installation & zoning design</li>
+<li>Line set and refrigerant charging</li>
+<li>Filter cleaning or replacement</li>
+<li>Multi-head system balancing</li>
+<li>Remote control & Wi-Fi smart setup</li>
+ 
+🌡️ <strong>Ventilation & Airflow Systems</strong>
+<li>Ductwork design and layout for remodels or new builds</li>
+<li>Duct sealing & balancing for proper airflow</li>
+<li>Installation of return air runs</li>
+<li>Exhaust fan installation (bath, kitchen, attic)</li>
+<li>Attic and crawlspace ventilation</li>
+<li>Fresh air intake systems</li>
+<li>Inline booster fan installation</li>
+<li>HRV / ERV (Heat & Energy Recovery Ventilator) installation</li>
+<li>Duct cleaning and sanitization services</li>
+<br>
+</br>  
+🧰 <strong>Indoor Air Quality (IAQ) Solutions</strong>
+<li>Whole-home humidifiers & dehumidifiers</li>
+<li>UV light air purification systems</li>
+<li>HEPA filter installation</li>
+<li>Electronic air cleaners</li>
+<li>Mold and odor removal systems</li>
+<li>Carbon monoxide detector installation</li>
+<li>Duct sanitizing and deodorizing</li>
+<li>Air quality testing & recommendations</li>
+ 
+🔥 <strong>Gas Line & Combustion Services</strong>
+<li>Gas furnace & appliance connection</li>
+<li>Gas leak detection and repair</li>
+<li>Gas valve and regulator replacements</li>
+<li>Combustion safety & CO testing</li>
+<li>Pilot light & ignition troubleshooting</li>
+<li>Flue venting upgrades (to code compliance)</li>
+ 
+🏠 Residential HVAC Installation & Upgrades</strong>
+<li>Complete home HVAC system installation</li>
+<li>High-efficiency upgrade consultation</li>
+<li>Smart thermostat installation (Nest, Ecobee, Honeywell, etc.)</li>
+<li>Multi-zone temperature control systems</li>
+<li>Air handler replacement</li>
+<li>Attic or basement system retrofits</li>
+<li>Load calculations & duct sizing verification</li>
+
+🏢 <strong>Commercial HVAC Services</strong>
+<li>Rooftop unit (RTU) installation & service</li>
+<li>Split system & multi-zone system repairs</li>
+<li>Air balancing and building pressurization</li>
+<li>Commercial thermostat & automation setup</li>
+<li>Commercial exhaust systems (kitchen, restroom, warehouse)</li>
+<li>Preventive maintenance contracts</li>
+<li>Emergency service for business downtime prevention</li>
+<li>Tenant improvement HVAC build-outs</li>
+<li>Energy management & efficiency upgrades</li>
+
+
+</ul>
+      <div class="card-cta">
+        <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
+        <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+          Request Service
+        </a>
+      </div>
+    </section>
+
   </div>
-
-  <h1>Electrical Service</h1>
-  ...
-
-  <p><strong>No heat or no A/C should be addressed quickly.</strong> If you’re without heat in winter or A/C in summer, call now.</p>
-
-  <p style="font-size:22px; margin:18px 0;">
-    <a href="tel:2623005339">Call Now: 262-300-5339</a>
-  </p>
-
-  <h2>Request HVAC Service</h2>
-  <p><a href="https://forms.gle/3DgnAATu35Hmt1Kw8">Request HVAC Service</a></p>
-
-  <p style="margin-top:30px;"><a href="/">← Back to Services</a></p>
 </body>
 </html>
