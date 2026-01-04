@@ -21,10 +21,26 @@
       --text:#0b1220;
       --muted:#4b5563;
       --white:#ffffff;
+.service-title{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.service-icon{
+  font-size: 1.1em;
+}
+       /* Indents the bullet points */
+.services{
+  list-style-position: inside;
+  padding-left: 30px;
+  margin-left: 0;
+}
 
       /* Buttons */
       --btnCall:#dc2626;       /* emergency red */
-      --btnDark:#111827;       /* secondary dark */
+      --btnDark:#4376e6;       /* secondary dark */
     }
 
     *{ box-sizing:border-box; }
@@ -123,10 +139,12 @@
       border-color: rgba(220,38,38,0.35);
     }
 
-    .btn-request{
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-    }
+.btn-request{
+  background: #4376e6;  /* your blue */
+  color: #fff;
+  border-color: rgba(67,118,230,0.4);
+}
+
 
     .hero-image{
       width: 100%;
@@ -236,12 +254,13 @@
             </div>
           </div>
 
-          <h1>Emergency Electrical Services</h1>
+          <h1>Emeregencies Elecrical Services</h1>
 
           <p class="lead">
             <strong>Electrical issues can be dangerous.</strong>
             If you’re experiencing power loss, burning smells, sparking, or repeated breaker trips, call now.
           </p>
+          
 
           <div class="cta">
             <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
@@ -264,14 +283,18 @@
 
     <!-- SERVICES -->
     <section class="card">
-      <h2>Additional Electrical Services</h2>
+      <h2>Additional Plumbing Services</h2>
       <p>
-        We also provide everyday electrical installation, repair, replacement, and upgrades for homeowners,
-        landlords, and property managers.
+        We handle both emergency plumbing issues and everyday plumbing repairs, installations, and upgrades.
       </p>
 
-      <ul class="services">
-<strong>Electrical</strong>
+<h2 class="service-title">
+  <span class="service-icon">💧</span>
+  General Plumbing Repairs, Installation and Replacement 
+</h2>
+
+<ul class="services">
+<strong>ELECTRICAL</strong>
 <li>Electrical Troubleshooting & Diagnostics</li>
 <li>Breakers tripping</li>
 <li>Plugging in too many devices causes breakers to trip</li>
@@ -297,7 +320,7 @@
 <li>Exhaust fans or bathroom exhaust fans not working</li>
 <li>Attic fan motors not working</li>
 
-<strong>Safety Hazards, Overheating & Fire Risks</strong>
+<strong>SAFETY HAZARDS, OVERHEATING & FIRE RISKS</strong>
 <li>Burned plugs</li>
 <li>Burned smell from the panel box</li>
 <li>Smoking plugs</li>
@@ -309,7 +332,7 @@
 <li>Wiring exposed</li>
 <li>Failed electrical inspection reports</li>
 
-<strong>Repairs & Replacements</strong>
+<strong>REPAIRS AND REPLACEMENTS</strong>
 <li>Damaged electrical wiring</li>
 <li>Torn wiring</li>
 <li>Cracked, loose, or broken outlets</li>
@@ -323,8 +346,7 @@
 <li>Lighting fixtures not working</li>
 <li>Shower light not working</li>
 <li>Over-cabinet lighting not working</li>
-      </ul>
-
+</ul>
       <div class="card-cta">
         <a class="btn btn-call" href="tel:+12623005339">Call Us Now</a>
         <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
@@ -336,4 +358,3 @@
   </div>
 </body>
 </html>
-
