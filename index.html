@@ -171,6 +171,39 @@
   margin-top: 48px;
   padding-bottom: 64px;
 }
+/* MOBILE FIXES */
+@media (max-width: 600px){
+
+  /* 1) Make sure nothing can overflow the screen width */
+  body{ overflow-x: hidden; }
+  .page{ padding-left: 16px; padding-right: 16px; }
+  .service-grid{ width: 100%; }
+
+  /* Cards won't exceed the container */
+  .service-card{
+    width: 100%;
+    max-width: 340px;   /* adjust 320–360 if you want */
+    margin: 0 auto;     /* ensures centered within grid */
+  }
+
+  /* 2) Center-align the content inside each card */
+  .service-card{
+    text-align: center;
+  }
+  .service-card .icon{
+    margin-bottom: 10px;
+  }
+  .service-card h3,
+  .service-card p{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Grid items centered */
+  .service-grid{
+    justify-items: center;
+  }
+}
 
   </style>
 </head>
