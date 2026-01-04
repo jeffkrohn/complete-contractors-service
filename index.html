@@ -204,6 +204,38 @@
     justify-items: center;
   }
 }
+/* MOBILE HERO CENTERING */
+@media (max-width: 600px){
+
+  /* Center hero content */
+  .hero-inner{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center logo */
+  .topbar{
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Ensure logo doesn’t stretch */
+  .logo{
+    margin: 0 auto 12px;
+  }
+
+  /* Center headline and intro text */
+  .hero h1,
+  .hero .intro{
+    text-align: center;
+  }
+
+  /* Optional: tighten spacing for phone */
+  .hero h1{
+    font-size: 32px;
+  }
+}
 
   </style>
 </head>
