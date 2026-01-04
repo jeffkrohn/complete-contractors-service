@@ -19,6 +19,22 @@
       margin: 0 auto;
       padding: 32px 24px;
     }
+.page{
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* keeps hero text nicely centered and not full-bleed */
+.hero-inner{
+  max-width: 720px;
+  margin-left: 0; /* keep left aligned inside the container */
+}
+
+/* move logo back to the top-left area, not near bottom */
+.topbar{
+  margin: 0 0 14px 0;
+}
 
     /* LOGO */
     .topbar{
@@ -91,6 +107,18 @@
       box-shadow:0 10px 26px rgba(0,0,0,0.08);
       transition: transform .15s ease, box-shadow .15s ease;
     }
+    @media (max-width: 600px){
+  .service-grid{ justify-items: center; }
+  .service-card{ max-width: 360px; width: 100%; }
+}
+
+.service-card{
+  max-width: 420px;
+}
+
+.service-grid{
+  justify-items: start;
+}
 
     .service-card:hover{
       transform: translateY(-4px);
@@ -119,76 +147,84 @@
     }
     /* HERO SECTION */
 .hero{
-  padding: 52px 0 40px;
+  padding: 36px 0 26px;
   background:
-    linear-gradient(
-      180deg,
-      rgba(3,7,18,0.60),
-      rgba(3,7,18,0.65)
-    ),
+    linear-gradient(180deg, rgba(3,7,18,0.52), rgba(3,7,18,0.62)),
     url("/images/hero-bg.png");
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+
+  /* IMPORTANT: move the “focus” of the image UP so faces don’t get cropped */
+  background-position: center 20%;
 }
 
   </style>
 </head>
 
 <body>
-  <section class="hero">
-  <div class="page">
 
-    <!-- LOGO -->
-    <div class="topbar">
-      <img src="/logo.png" alt="Complete Contractors" class="logo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="page">
+      <div class="hero-inner">
+
+        <div class="topbar">
+          <img src="/images/logo.png" alt="Complete Contractors" class="logo">
+        </div>
+
+        <h1>Service Requests</h1>
+        <p class="intro">
+          Select the service you need. We provide fast, reliable residential and property maintenance services throughout Southeastern Wisconsin.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn-call" href="tel:2623005339">Call Now: 262-300-5339</a>
+          <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank" rel="noopener">
+            Request Service
+          </a>
+        </div>
+
+      </div>
     </div>
   </section>
 
-    <h1>Complete Contractors</h1>
-    <p class="intro">
-      Select the service you need. We provide fast, reliable residential and property maintenance services throughout Southeastern Wisconsin.
-    </p>
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="page">
 
-    <div class="cta">
-      <a class="btn btn-call" href="tel:2623005339">Call Now: 262-300-5339</a>
-      <a class="btn btn-request" href="https://forms.gle/3DgnAATu35Hmt1Kw8" target="_blank">
-        Request Service
-      </a>
-    </div>
+      <div class="service-grid">
+        <a class="service-card" href="/electrical/">
+          <div class="icon">⚡</div>
+          <h3>Electrical</h3>
+          <p>Emergency service, troubleshooting, repairs, and installations</p>
+        </a>
 
-    <div class="service-grid">
+        <a class="service-card" href="/plumbing/">
+          <div class="icon">💧</div>
+          <h3>Plumbing</h3>
+          <p>Repairs, drain issues, installations, and emergency plumbing</p>
+        </a>
 
-      <a class="service-card" href="/electrical/">
-        <div class="icon">⚡</div>
-        <h3>Electrical</h3>
-        <p>Emergency service, troubleshooting, repairs, and installations</p>
-      </a>
+        <a class="service-card" href="/hvac/">
+          <div class="icon">🔥</div>
+          <h3>HVAC</h3>
+          <p>Heating, cooling, diagnostics, and system replacement</p>
+        </a>
 
-      <a class="service-card" href="/plumbing/">
-        <div class="icon">💧</div>
-        <h3>Plumbing</h3>
-        <p>Repairs, drain issues, installations, and emergency plumbing</p>
-      </a>
+        <a class="service-card" href="/flooring/">
+          <div class="icon">🧱</div>
+          <h3>Flooring</h3>
+          <p>LVP, tile, hardwood, laminate, carpet, and replacements</p>
+        </a>
+      </div>
 
-      <a class="service-card" href="/hvac/">
-        <div class="icon">🔥</div>
-        <h3>HVAC</h3>
-        <p>Heating, cooling, diagnostics, and system replacement</p>
-      </a>
-
-      <a class="service-card" href="/flooring/">
-        <div class="icon">🧱</div>
-        <h3>Flooring</h3>
-        <p>LVP, tile, hardwood, laminate, carpet, and replacements</p>
-      </a>
+      <div class="footer-cta">
+        <strong>Need service now?</strong>
+        <a href="tel:2623005339">Call 262-300-5339</a>
+      </div>
 
     </div>
-
-    <div class="footer-cta">
-      <strong>Need service now?</strong>  
-      <a href="tel:2623005339">Call 262-300-5339</a>
-    </div>
-
   </div>
+
 </body>
 </html>
