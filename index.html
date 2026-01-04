@@ -26,6 +26,14 @@
 }
 
 /* keeps hero text nicely centered and not full-bleed */
+    .hero h1,
+.hero .intro{
+  color: #ffffff;
+}
+.hero .intro{
+  opacity: 0.92;
+}
+
 .hero-inner{
   max-width: 720px;
   margin-left: 0; /* keep left aligned inside the container */
@@ -42,15 +50,17 @@
     }
 
     .logo{
-      max-width: 160px;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 600px){
-      .logo{
-        max-width: 120px;
-      }
+  max-width:160px;
+  height:auto;
+  display:block;
+  background: rgba(255,255,255,0.96);
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+@media (max-width: 600px){
+  .logo{ max-width:120px; }
+}
     }
 
     h1{
@@ -156,6 +166,10 @@
 
   /* IMPORTANT: move the “focus” of the image UP so faces don’t get cropped */
   background-position: center 20%;
+}
+.footer-cta{
+  margin-top: 48px;
+  padding-bottom: 64px;
 }
 
   </style>
