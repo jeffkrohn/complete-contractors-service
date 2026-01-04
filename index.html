@@ -17,7 +17,24 @@
     .page{
       max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 24px;
+      padding: 32px 24px;
+    }
+
+    /* LOGO */
+    .topbar{
+      margin-bottom: 18px;
+    }
+
+    .logo{
+      max-width: 160px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 600px){
+      .logo{
+        max-width: 120px;
+      }
     }
 
     h1{
@@ -105,6 +122,11 @@
 
 <body>
   <div class="page">
+
+    <!-- LOGO -->
+    <div class="topbar">
+      <img src="/logo.png" alt="Complete Contractors" class="logo">
+    </div>
 
     <h1>Complete Contractors</h1>
     <p class="intro">
